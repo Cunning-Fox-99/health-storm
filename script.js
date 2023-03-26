@@ -35,5 +35,12 @@ window.addEventListener('DOMContentLoaded', function() {
 
     });
 
+    let button = document.getElementById('menu-button')
+    let menu = document.getElementById('menu')
+
+    button.addEventListener('click', () => {
+        menu.classList.toggle('active')
+        button.classList.toggle('active')
+    })
 
 });
