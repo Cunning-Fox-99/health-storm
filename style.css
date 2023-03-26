@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     line-height: 1;
 }
 
@@ -88,7 +89,7 @@ table {
 }
 
 .header__nav-item {
-    font-size: 16px;
+    font-size: 18px;
     color: #00CB3B;
 }
 
@@ -191,6 +192,7 @@ table {
 
 .preview__bottom-text-bottom {
     font-size: 24px;
+    color: #000;
 }
 
 .services {
@@ -265,7 +267,7 @@ table {
     width: 100%;
 
     position: relative;
-    overflow: auto;
+    /*overflow: auto;*/
     border-bottom: 1px solid #00CB3B;
 }
 
@@ -282,12 +284,18 @@ table {
 }
 
 .content .tab-header-tab {
+    display: flex;
     color: #000;
-    width: 200px;
+
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     white-space: nowrap;
+    position: relative;
+
+    padding: 12px;
+    border: 1px solid #00CB3B;
+    border-radius: 12px 12px 0 0;
 }
 
 .content .tab-header-tab:not(:last-child) {
@@ -296,11 +304,14 @@ table {
 
 .content .tab-header-tab:after {
     content: '';
-    display: block;
-    width: 0%;
+
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
     height: 3px;
     background-color: #00CB3B;
-    margin-top: 4px;
+
     transition: 0.4s;
 }
 
@@ -639,11 +650,13 @@ table {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+    text-align: center;
 }
+
 
 .about__item-text {
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .big-bg {
@@ -651,6 +664,10 @@ table {
 
     background: url("./images/big-bg.jpg") no-repeat center;
     background-size: cover;
+}
+
+.about__button--mobile {
+    display: none;
 }
 
 .info {
@@ -706,7 +723,7 @@ table {
     background: transparent;
     border: unset;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .mySwiper2 .swiper-button-next {
@@ -854,9 +871,17 @@ table {
     background: linear-gradient(90.28deg, #00376C 0.23%, #00A4E4 99.76%);
     border-radius: 25px;
 
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
     z-index: 1;
+}
+
+.equipment__image {
+    height: 240px;
+    width: 100%;
+
+    background-image: url("./images/equipment.jpg");
+    background-size: cover;
 }
 
 .info-2__bubble {
@@ -1317,6 +1342,14 @@ table {
         height: 100%;
     }
 
+    .tab-header {
+        overflow: auto;
+    }
+
+    .tab-header-tab {
+        width: 230px;
+    }
+
 }
 
 @media (max-width: 860px) {
@@ -1334,7 +1367,7 @@ table {
     }
 
     .preview__description {
-        margin-bottom: 24px;
+        /*margin-bottom: 24px;*/
     }
 
     .price__item {
@@ -1471,7 +1504,11 @@ table {
     }
 
     .preview__bottom-text-bottom {
-        font-size: 12px;
+        font-size: 10px;
+    }
+
+    .services__title {
+        margin-bottom: 50px;
     }
 
     .preview__bottom-text-top {
@@ -1511,11 +1548,71 @@ table {
     }
 
     .info-2__bubble span {
+        line-height: 1.1;
+        top: 36%;
         left: 35%;
     }
 
     .info-2 {
         overflow: hidden;
+    }
+
+    .price__item-images {
+        display: none;
+    }
+
+    .about__button {
+        display: none;
+    }
+
+    .about__button--mobile {
+        display: flex;
+    }
+
+    .content .tab-header {
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: unset;
+    }
+
+    .content .tab-header-tab {
+        font-size: 18px;
+        width: fit-content;
+        border: unset;
+        padding: 0;
+    }
+
+    .content .tab-header-tab:not(:last-child) {
+        margin-right: unset;
+        margin-bottom: 20px;
+    }
+
+    .content .tabcontent {
+        padding: 0;
+    }
+
+    .mySwiper2 {
+        width: 100%;
+    }
+
+    .mySwiper2 .swiper-button-prev, .mySwiper2 .swiper-button-next {
+        display: none;
+    }
+
+    .check-price__column--2 {
+        display: none;
+    }
+
+    .info-2__text {
+        font-size: 28px;
+    }
+
+    .info__collapse-content .card {
+        font-size: 14px;
+    }
+
+    .info-2__description {
+        font-size: 16px;
     }
 
 }
@@ -1550,18 +1647,18 @@ table {
     }
 
     .check-price__buttons {
-        width: 280px;
+        width: 300px;
     }
 
     .check-price__button {
-        font-size: 18px;
+        font-size: 17px;
         padding-left: 10px;
     }
 
     .check-price__button img {
         width: 32px;
         height: 32px;
-        margin-right: 10px;
+        margin-right: 5px;
     }
 
     .info-3__item span {
@@ -1572,6 +1669,30 @@ table {
     .info-3__item img {
         width: 62px;
         height: 62px;
+    }
+
+    .about__title {
+        display: none;
+    }
+
+    .about__text b {
+        font-size: 32px;
+    }
+
+    .about__subtext {
+        margin-bottom: 38px;
+    }
+
+    .about__item:nth-child(4) {
+        display: none;
+    }
+
+    .header__nav-item {
+        font-size: 16px;
+    }
+
+    .about__item-text {
+        font-size: 14px;
     }
 
 }
