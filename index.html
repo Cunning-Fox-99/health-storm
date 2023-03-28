@@ -929,6 +929,20 @@
 <div id="equipment" class="equipment">
 
     <div class="equipment__image"></div>
+    <div class="swiper mySwiper4">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="images/equipment/1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/equipment/2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/equipment/3.jpg" alt=""></div>
+        </div>
+
+
+
+    </div>
+
+</div>
     <div class="equipment__text-wrapper">
         <span class="container">Величезний досвід у вирішенні різних ситуацій, першокласні хімічні засоби та чудова техніка – причини, з яких ми можемо давати гарантію на якісне виконання хімчистки м'яких меблів та килимів. Зв'яжіться з нами і поверніть інтер'єру його бездоганність.</span>
     </div>
@@ -1059,6 +1073,18 @@
     });
 
     const swiper3 = new Swiper(".mySwiper3", {
+        slidesPerView: 1,
+        speed: 300,
+        loop: true,
+        cssMode: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+
+    });
+
+    const swiper4 = new Swiper(".mySwiper4", {
         slidesPerView: 1,
         speed: 300,
         loop: true,
