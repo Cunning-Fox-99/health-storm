@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Health clean</title>
-    <script src="script.js" defer></script>
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,8 +19,53 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./style-2.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
+
+<div class="modal-window" id="modal-window">
+
+    <div class="modal-window__wrapper">
+
+        <div class="modal-window__close" id="close-modal"></div>
+
+        <form class="form-block active" id="form-block">
+            <label class="form-block__item">
+                <input required name="email" type="text" placeholder="Телефон">
+            </label>
+
+            <label class="form-block__item">
+                <select name="subject" id="">
+                    <option>Хімчистка м’ягких меблів</option>
+                    <option>Видалення запахів і плям</option>
+                    <option>Хімчистка килимів</option>
+                    <option>Хімчистка матраців</option>
+                </select>
+            </label>
+
+            <label class="form-block__item">
+                <textarea required name="message" rows="4" placeholder="Повідомлення..."></textarea>
+            </label>
+
+            <button class="form-block__button button" type="submit">Замовити дзвінок!</button>
+        </form>
+
+        <div class="lds-roller" id="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+        <div class="email-send" id="email-send">
+            <img src="images/success.svg" alt="">
+            <span class="email-send__text">Дякуємо за замовлення!</span>
+            <p>Ми зв'яжемося з вами протягом години</p>
+        </div>
+
+        <div class="email-error" id="email-error">
+            <img src="images/error.svg" alt="">
+        </div>
+
+    </div>
+
+</div>
+
 
 <div class="wrapper">
     <div class="swiper mySwiper3">
@@ -31,7 +77,7 @@
                 <div class="slider-text container">
                     <h5>Хімчистка <b>М'яких меблів</b></h5>
                     <span>Професійне чищення диванів і крісел від забруднень, заселенностей, чорнила. Видалимо плями і розводи з відновленням вихідного кольору оббивки.</span>
-                    <a href="mailto:healthcleanua@gmail.com">ЗАМОВИТИ ДЗВІНОК</a>
+                    <button data-open-modal>ЗАМОВИТИ ДЗВІНОК</button>
                 </div>
 
             </div>
@@ -40,7 +86,7 @@
                 <div class="slider-text container">
                     <h5>Хімчистка <b>Килимів та ковроліну</b></h5>
                     <span>Якісна чистка килимів і килимових покриттів на дому. Швидко повернемо естетичні характеристики і позбавимо від неприємних запахів.</span>
-                    <a href="mailto:healthcleanua@gmail.com">ЗАМОВИТИ ДЗВІНОК</a>
+                    <button data-open-modal>ЗАМОВИТИ ДЗВІНОК</button>
                 </div>
             </div>
 
@@ -48,7 +94,7 @@
                 <div class="slider-text container">
                     <h5>Хімчистка <b>Матраців</b></h5>
                     <span>Ефективна хімчистка матраців на дому: від дитячих до двоспальних ортопедичних. Видаляємо розлучення поту, сечі і пролитих рідин.</span>
-                    <a href="mailto:healthcleanua@gmail.com">ЗАМОВИТИ ДЗВІНОК</a>
+                    <button data-open-modal>ЗАМОВИТИ ДЗВІНОК</button>
                 </div>
             </div>
 
@@ -56,7 +102,7 @@
                 <div class="slider-text container">
                     <h5>Видалення <b>Плям та запахів</b></h5>
                     <span>Усунення неприємних запахів в квартирі, офісі або комерційному об'єкті. Виводимо свіжі і старі забруднення з різних поверхонь.</span>
-                    <a href="mailto:healthcleanua@gmail.com">ЗАМОВИТИ ДЗВІНОК</a>
+                    <button data-open-modal>ЗАМОВИТИ ДЗВІНОК</button>
                 </div>
             </div>
 
@@ -201,12 +247,12 @@
                                             <span>850 грн</span>
                                         </div>
                                         <div class="price__collapse-price">
-                                            <span>Диван кутовий 1.5х2.5м</span>
+                                            <span>Диван тримісний</span>
                                             <span>650 грн</span>
                                         </div>
                                         <div class="price__collapse-price">
-                                            <span>Диван кутовий 1.5х2.5м</span>
-                                            <span>450 грн</span>
+                                            <span>Диван двомісний</span>
+                                            <span>500 грн</span>
                                         </div>
                                     </div>
                                 </div>
@@ -310,7 +356,7 @@
                                     <div class="card card-body">
                                         <div class="price__collapse-price">
                                             <span>Двомісний матрац</span>
-                                            <span>600 грн</span>
+                                            <span>700 грн</span>
                                         </div>
 
                                     </div>
@@ -326,7 +372,7 @@
                                     <div class="card card-body">
                                         <div class="price__collapse-price">
                                             <span>Полуторний </span>
-                                            <span>420 грн</span>
+                                            <span>550 грн</span>
                                         </div>
 
                                     </div>
@@ -342,7 +388,7 @@
                                     <div class="card card-body">
                                         <div class="price__collapse-price">
                                             <span>Одномісний</span>
-                                            <span>300 грн</span>
+                                            <span>350 грн</span>
                                         </div>
 
                                     </div>
@@ -391,7 +437,7 @@
                                     <div class="card card-body">
                                         <div class="price__collapse-price">
                                             <span>Нейлоновий</span>
-                                            <span>50 грн<sup>м2</sup></span>
+                                            <span>55 грн<sup>м2</sup></span>
                                         </div>
 
                                     </div>
@@ -408,7 +454,7 @@
                                     <div class="card card-body">
                                         <div class="price__collapse-price">
                                             <span>Шерстяний</span>
-                                            <span>55 грн<sup>м2</sup></span>
+                                            <span>60 грн<sup>м2</sup></span>
                                         </div>
 
                                     </div>
@@ -425,7 +471,7 @@
                                     <div class="card card-body">
                                         <div class="price__collapse-price">
                                             <span>Синтетичний</span>
-                                            <span>50 грн<sup>м2</sup></span>
+                                            <span>55 грн<sup>м2</sup></span>
                                         </div>
 
                                     </div>
@@ -469,12 +515,12 @@
                             <div class="price__collapse-wrapper">
                                 <a class="price__collapse-button collapsed btn btn-primary" data-bs-toggle="collapse"
                                    href="#multiCollapseExample13" role="button" aria-expanded="false"
-                                   aria-controls="multiCollapseExample13">Видалення плям, що важко виводяться</a>
+                                   aria-controls="multiCollapseExample13">Виведення плям</a>
                                 <div class="price__collapse-content collapse multi-collapse"
                                      id="multiCollapseExample13">
                                     <div class="card card-body">
                                         <div class="price__collapse-price">
-                                            <span>Видалення плям, що важко виводяться</span>
+                                            <span>Видалення важковивідних плям</span>
                                             <span>від 20 грн</span>
                                         </div>
 
@@ -485,7 +531,7 @@
                             <div class="price__collapse-wrapper">
                                 <button class="price__collapse-button collapsed btn btn-primary" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#multiCollapseExample14"
-                                        aria-expanded="false" aria-controls="multiCollapseExample14">Видалення неприємних запахів
+                                        aria-expanded="false" aria-controls="multiCollapseExample14">Видалення запаху
                                 </button>
                                 <div class="price__collapse-content collapse multi-collapse"
                                      id="multiCollapseExample14">
@@ -568,6 +614,8 @@
                 <div class="swiper-slide"><img src="images/slider/slide-4.jpg" alt=""></div>
                 <div class="swiper-slide"><img src="images/slider/slide-5.jpg" alt=""></div>
                 <div class="swiper-slide"><img src="images/slider/slide-6.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/slider/slide-7.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/slider/slide-8.jpg" alt=""></div>
             </div>
 
             <!--                <div class="swiper-pagination"></div>-->
@@ -598,7 +646,7 @@
 
                 <span class="about__subtext">Результатом Вашого дзвінка до нашої компанії стане повернення дорогим серцю речей їхньої привабливості. Диван, крісло чи улюблена іграшка дитини — з нами вони приноситимуть естетичне задоволення якомога довше.</span>
 
-                <button class="about__button">НАШЕ ОБЛАДНАННЯ</button>
+                <a href="#equipment" class="about__button">НАШЕ ОБЛАДНАННЯ</a>
             </div>
 
         </div>
@@ -941,7 +989,7 @@
 
             <span class="footer__text">Health Clean – бездоганна репутація у сфері професійної хімчистки!</span>
 
-            <a href="mailto:healthcleanua@gmail.com" class="footer__button">ЗАМОВИТИ ДЗВІНОК</a>
+            <button data-open-modal class="footer__button">ЗАМОВИТИ ДЗВІНОК</button>
         </div>
 
     </div>
@@ -950,7 +998,9 @@
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+
+
 <script>
     const swiper = new Swiper(".mySwiper", {
         navigation: {
@@ -1020,5 +1070,7 @@
 
     });
 </script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
